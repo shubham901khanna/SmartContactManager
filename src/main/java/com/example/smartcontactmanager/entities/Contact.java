@@ -3,18 +3,38 @@ package com.example.smartcontactmanager.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="CONTACT")
+@Table(name = "contact")
 public class Contact {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer cId;
+    private int cId;
     private String name;
+    private String secondName;
+    private String Work;
+    private String email;
+    private String phone;
+    private String image;
+    @Column(length = 1000)
+    private String description;
 
-    public Integer getcId() {
+    @ManyToOne
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    public int getcId() {
         return cId;
     }
 
-    public void setcId(Integer cId) {
+    public void setcId(int cId) {
         this.cId = cId;
     }
 
@@ -35,11 +55,11 @@ public class Contact {
     }
 
     public String getWork() {
-        return work;
+        return Work;
     }
 
     public void setWork(String work) {
-        this.work = work;
+        Work = work;
     }
 
     public String getEmail() {
@@ -74,11 +94,5 @@ public class Contact {
         this.description = description;
     }
 
-    private String secondName;
-    private String work;
-    private String email;
-    private String phone;
-    private String image;
-    @Column(length = 50000)
-    private String description;
+
 }

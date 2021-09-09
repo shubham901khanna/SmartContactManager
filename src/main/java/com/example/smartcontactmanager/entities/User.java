@@ -1,16 +1,18 @@
 package com.example.smartcontactmanager.entities;
 
 import javax.persistence.*;
-import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Table(name = "USER")
 public class User {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    @Column(unique=true)
+    @Column(unique = true)
     private String email;
     private String password;
     private String role;
@@ -19,6 +21,18 @@ public class User {
     @Column(length = 500)
     private String about;
 
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    private List<Contact> contacts = new ArrayList<>();
+
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
 
 
     public Integer getId() {
