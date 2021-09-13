@@ -30,35 +30,43 @@
                 }
             </style>
             <h1>Register Here !!</h1>
-            <form th:action="@{/do_register}" method="post">
-                <!-- name field-->
+            <form th:action="@{/do_register}" method="post" th:object="${user}">
+              <!--name field-->
                 <div class="mb-3">
                     <label for="name_field" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name_field" placeholder="Ënter name" required
-                           aria-describedby="emailHelp">
+                    <input name="name" type="text" class="form-control" id="name_field" placeholder="Enter name" required th:value="${user.name}"
+                        aria-describedby="emailHelp">
                 </div>
-                <!-- email field-->
+              <!-- email field-->
                 <div class="mb-3">
                     <label for="email_field" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email_field" placeholder="Ënter email here" required
-                           aria-describedby="emailHelp">
+                    <input name="email" type="email" class="form-control" id="email_field" placeholder="Enter email here" required th:value="${user.email}"
+                        aria-describedby="emailHelp">
                 </div>
-                <!-- password field-->
+            <!-- password field-->
                 <div class="mb-3">
                     <label for="password_field" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password_field" placeholder="Ënter password here"
-                           required
+                    <input type="password" class="form-control" id="password_field" placeholder="Enter password here"
+                        name="password"   required
                            aria-describedby="emailHelp">
                 </div>
-                <!-- user about field-->
+              <!-- user about field-->
                 <div class="form-group">
-                    <textarea rows="5" placeholder="Enter about yourself" required class="form-control"></textarea>
+                    <textarea rows="5"  placeholder="Enter about yourself" required
+                        name="about"      th:value="${user.about}"     class="form-control"></textarea>
+                </div>
+
+               <!-- terms and condition agreement-->
+
+           <div class="form-group form-check text-center">
+                    <input type="checkbox" class="form-check-input" name="agreement" id="agreement">
+                    <label for="agreement">Please accept terms and condition</label>
                 </div>
                 <div class="container" text-center>
-                    <button type="submit"  class="btn btn-primary" text-white>
+                    <button type="submit" class="btn btn-primary" text-white>
                         submit
                     </button>
-                    <button type="reset"  class="btn btn-warning">
+                    <button type="reset" class="btn btn-warning">
                         reset
                     </button>
                 </div>

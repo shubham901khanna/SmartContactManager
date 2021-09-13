@@ -16,13 +16,13 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private String enabled;
+    private boolean enabled;
     private String imageurl;
     @Column(length = 500)
     private String about;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Contact> contacts = new ArrayList<>();
 
 
@@ -34,6 +34,14 @@ public class User {
         this.contacts = contacts;
     }
 
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public Integer getId() {
         return id;
@@ -75,13 +83,6 @@ public class User {
         this.role = role;
     }
 
-    public String getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(String enabled) {
-        this.enabled = enabled;
-    }
 
     public String getImageurl() {
         return imageurl;
@@ -97,5 +98,20 @@ public class User {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", enabled='" + enabled + '\'' +
+                ", imageurl='" + imageurl + '\'' +
+                ", about='" + about + '\'' +
+                ", contacts=" + contacts +
+                '}';
     }
 }
