@@ -49,6 +49,7 @@ public class HomeController {
             }
             user.setRole("USER_ROLE");
             user.setEnabled(true);
+            user.setImageurl("default.png");
             System.out.println("Agreement" + agreement);
             System.out.println("User" + user);
             User result = this.userRepository.save(user);
@@ -60,7 +61,7 @@ public class HomeController {
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("user", user);
-            session.setAttribute("message", new Message("something went wrong" + e.getMessage(), "alert-error") {
+            session.setAttribute("message", new Message("something went wrong" + e.getMessage(), "alert-danger") {
             });
         }
         return "signup";

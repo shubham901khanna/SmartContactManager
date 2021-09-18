@@ -2,20 +2,15 @@ package com.example.smartcontactmanager.helper;
 
 public class Message {
 
-    private String message;
+    private String content;
     private String type;
 
-    public Message(String message, String type) {
-        this.message = message;
-        this.type = type;
+    public String getContent() {
+        return content;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getType() {
@@ -23,6 +18,11 @@ public class Message {
     }
 
     public void setType(String type) {
+        this.type = type;
+    }
+
+    public Message(String content, String type) {
+        this.content = content;
         this.type = type;
     }
 }

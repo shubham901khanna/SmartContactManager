@@ -13,32 +13,36 @@
     <title th:text="${title}">Base html</title>
 </head>
 <body>
-   <!--navbar-->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-       <div class="container-fluid">
-           <a class="navbar-brand" href="#">SmartContactManager</a>
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-           </button>
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav mL-auto text-uppercase">
-                   <li class="nav-item">
-                       <a class="nav-link active" aria-current="page"  th:href="@{/}" href="#">Home</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" href="#">About</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link">Login</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link"  th:href="@{/signup}">Sign Up</a>
-                   </li>
-               </ul>
-           </div>
-       </div>
-   </nav>
-   <!--end navbar-->
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">SmartContactManager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mL-auto text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/signup}">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--end navbar-->
+
+
+
 <div th:replace="${content}"></div>
 
 <!-- Optional JavaScript; choose one of the two! -->
@@ -48,7 +52,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 
-   <script th:src="@{/script.js}"></script>
+<script th:src="@{/script.js}"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--

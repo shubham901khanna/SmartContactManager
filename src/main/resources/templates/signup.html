@@ -29,6 +29,11 @@
                     text-align: center;
                 }
             </style>
+            <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                <p th:text="${session.message.content}"></p>
+                <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+            </div>
+
             <h1>Register Here !!</h1>
             <form th:action="@{/do_register}" method="post" th:object="${user}">
               <!--name field-->
