@@ -34,7 +34,6 @@ public class User {
         this.contacts = contacts;
     }
 
-
     public boolean isEnabled() {
         return enabled;
     }
@@ -100,7 +99,7 @@ public class User {
         this.about = about;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "User{" +
                 "id=" + id +
@@ -113,5 +112,5 @@ public class User {
                 ", about='" + about + '\'' +
                 ", contacts=" + contacts +
                 '}';
-    }
+    }*/
 }
