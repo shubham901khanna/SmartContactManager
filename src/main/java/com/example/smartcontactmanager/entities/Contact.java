@@ -1,6 +1,7 @@
 package com.example.smartcontactmanager.entities;
 
 import javax.persistence.*;
+import java.io.File;
 
 @Entity
 @Table(name = "contact")
@@ -14,7 +15,7 @@ public class Contact {
     private String Work;
     private String email;
     private String phone;
-    private String image;
+   // private String image;
     @Column(length = 1000)
     private String description;
 
@@ -70,6 +71,8 @@ public class Contact {
         this.email = email;
     }
 
+
+
     public String getPhone() {
         return phone;
     }
@@ -78,13 +81,13 @@ public class Contact {
         this.phone = phone;
     }
 
-    public String getImage() {
+   /* public String getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
-    }
+    }*/
 
     public String getDescription() {
         return description;
@@ -93,6 +96,24 @@ public class Contact {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "cId=" + cId +
+                ", name='" + name + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", Work='" + Work + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+
+
 
 
 }
