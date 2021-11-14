@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org"
+      th:replace="base1::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>this is home page</title>
+</head>
+<body>
+<section>
+
+    <div class="card">
+
+        <div class="card-body">
+            <h1 class="text-center">Add Contact</h1>
+            <div class="container-fluid- mt-1">
+
+                <div class="row">
+
+                    <div class="col-md-10 offset-md-1">
+                        <form action="#"
+                              th:object="${contact}" enctype="multipart/form-data" method="post"
+                              th:action="@{/user/process_contact}" class="mt-2"
+                        >
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mr-3">
+                                        <i class="fas fa-plus">
+
+                                        </i>
+                                    </div>
+                                </div>
+                                <input type="text" id="name" placeholder="Enter name here" name="name"
+                                       class="form-control"/>
+                            </div>
+
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mr-3">
+                                        <i class="fas fa-user-alt">
+
+                                        </i>
+                                    </div>
+                                </div>
+                                <input type="secondName" id="secondName" placeholder="Enter nick name here"
+                                       name="secondName" class="form-control"/>
+                            </div>
+
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mr-3">
+                                        <i class="fa  fa-phone">
+
+                                        </i>
+                                    </div>
+                                </div>
+                                <input type="number" id="phone" placeholder="Enter phone no here" name="phone"
+                                       class="form-control"/>
+                            </div>
+
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+
+                                    </div>
+                                </div>
+                                <input type="email" id="email" placeholder="Enter email here" name="email"
+                                       class="form-control"/>
+                            </div>
+
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa  fa-briefcase">
+
+                                        </i>
+                                    </div>
+                                </div>
+                                <input type="text" id="Work" placeholder="Enter Work here" name="Work"
+                                       class="form-control"/>
+                            </div>
+
+
+                            <div class="form-group mt-3">
+
+                                <textarea placeholder="Enter your contact description" name="description"
+                                          id="description" class="form-control" rows="20"></textarea>
+                            </div>
+
+
+                            <div class="custom-file">
+                                <input type="file" name="image"/>
+                            </div>
+
+                            <div class="container text-center">
+
+                                <button class="btn- btn-outline-primary"> Save Contact</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+</body>
+</html>
+

@@ -14,7 +14,7 @@
 </head>
 <body>
 <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class=" fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">SmartContactManager</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -29,8 +29,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" ><span th:text="${user.name}"></span></a>
+                <li class="nav-item">
+                    <a class="nav-link"><span th:text="${user.name}"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/logout}">Logout</a>
@@ -40,10 +40,21 @@
     </div>
 </nav>
 <!--end navbar-->
+<!-- sidebar -->
+<div class=" sidebar mt-5">
+    <a href="#" th:href="@{/user/index}" class="item">Home</a>
+    <a href="#" class="item">View Contacts</a>
+    <a href="#" th:href="@{/user/add_contact}" class="item">Add contact</a>
+    <a href="#" class="item">your profile</a>
+    <a href="#" class="item">settings</a>
+    <a href="#" th:href="@{/logout}" class="item">Logout</a>
+<div class="divider"></div>
+</div>
 
+<div class="content">
+    <div th:replace="${content}"></div>
+</div>
 
-
-<div th:replace="${content}"></div>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
